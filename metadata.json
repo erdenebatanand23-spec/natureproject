@@ -1,0 +1,6 @@
+{
+  "name": "EcoFlora — Ургамал ба Эко-Технологи",
+  "description": "Дэлхийн ургамал, модны иж бүрэн ангилал, арчилгааны хуваарь болон байгальд ээлтэй ухаалаг технологийн платформ.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+    --brand-teal: #215b63;
+    --brand-teal-deep: #153e44;
+    --brand-mint: #67c090;
+    --brand-bg: #F8FAF9;
+    --brand-surface: #FFFFFF;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    background-color: var(--brand-bg);
+    color: #142B2E;
+  }
+}
+
+.font-botanical-serif {
+  font-family: var(--font-serif);
+}
+
+.font-tech-mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes leafSway {
+  0%, 100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(2.2deg) translate3d(3px, -4px, 0);
+  }
+}
+
+@keyframes leafSwayReverse {
+  0%, 100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(-2.4deg) translate3d(-4px, 3px, 0);
+  }
+}
+
+@keyframes floatOrganic {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translate3d(10px, -16px, 0) rotate(8deg);
+    opacity: 0.75;
+  }
+}
+
+@keyframes circuitDash {
+  0% {
+    stroke-dashoffset: 240;
+    opacity: 0.25;
+  }
+  50% {
+    stroke-dashoffset: 0;
+    opacity: 0.9;
+  }
+  100% {
+    stroke-dashoffset: -240;
+    opacity: 0.25;
+  }
+}
+
+@keyframes preloaderGlow {
+  0%, 100% {
+    transform: scale(0.95);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.85;
+  }
+}
+
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-leaf-sway {
+  animation: leafSway 9s ease-in-out infinite;
+  transform-origin: top left;
+}
+
+.animate-leaf-sway-reverse {
+  animation: leafSwayReverse 11s ease-in-out infinite;
+  transform-origin: bottom right;
+}
+
+.animate-float-organic {
+  animation: floatOrganic 12s ease-in-out infinite;
+}
+
+.animate-circuit-dash {
+  stroke-dasharray: 240;
+  animation: circuitDash 3.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+.animate-preloader-glow {
+  animation: preloaderGlow 2.4s ease-in-out infinite;
+}
+
+.animate-hero-enter {
+  animation: heroFadeUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-leaf-sway,
+  .animate-leaf-sway-reverse,
+  .animate-float-organic,
+  .animate-circuit-dash,
+  .animate-preloader-glow,
+  .animate-hero-enter {
+    animation: none !important;
+  }
+}
